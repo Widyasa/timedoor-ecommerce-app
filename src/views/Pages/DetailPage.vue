@@ -1,6 +1,6 @@
 <script setup>
 import { store } from '@/stores/index.js'
-import { onMounted } from 'vue'
+import { onMounted, onUnmounted, watch } from 'vue'
 import ImageProductDetail from '@/components/ImageProductDetail.vue'
 import { useRoute } from 'vue-router'
 import AllProduct from '@/views/Pages/AllProduct.vue'
@@ -14,6 +14,11 @@ const getById = async () => {
 }
 onMounted(() => {
   getById()
+})
+watch(() => route.params.id, async (newVal, oldVal) => {
+  if (newVal) {
+    await getById()
+  }
 })
 </script>
 
