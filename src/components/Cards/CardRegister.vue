@@ -76,7 +76,7 @@ const register = async () => {
       </div>
       <BaseInput v-model="signUpData.address" title-input="Address" identity="address" type="text" placeholder="enter your address..." />
     </div>
-    <BaseButton btn-class="btn-main w-100 mt-5 py-2" btn-content="Register"/>
+    <BaseButton type="submit" btn-class="btn-main w-100 mt-5 py-2" btn-content="Register"/>
   </form>
 
   <p class="text-center mt-2">Have an account? <RouterLink class="main-color text-decoration-none" to="/auth/login">Sign in</RouterLink></p>

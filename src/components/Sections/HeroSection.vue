@@ -22,7 +22,11 @@ import HeroCard from '@/components/Cards/HeroCard.vue'
 
 <style scoped>
 .hero-section{
-  height: 91dvh;
+  height: 100lvh;
+  //height: 100%;
+}
+.hero-section img{
+  object-fit: cover;
 }
 .hero-text-wrapper{
 

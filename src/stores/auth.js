@@ -1,6 +1,6 @@
 import Cookies from 'js-cookie'
 import axios from 'axios'
-import { apiKey, authUrl, baseUrl } from '../../env.js'
+import { apiKey, authUrl, baseUrl, registerUrl } from '../../env.js'
 
 export const auth =   {
   namespaced :true,
@@ -41,7 +41,7 @@ export const auth =   {
   actions : {
     async getRegisterData({commit, dispatch}, payload) {
       try {
-        const {data} = await axios.post(authUrl + apiKey, {
+        const {data} = await axios.post(registerUrl + apiKey, {
           email : payload.email,
           password : payload.password,
           returnSecureToken : true
@@ -51,9 +51,11 @@ export const auth =   {
           expiresIn : new Date().getTime() + Number.parseInt(data.expiresIn) * 1000
         })
         const newUserData = {
-          userId : data.localId, firstName: payload.firstName,
-          lastName : payload.lastName, username: payload.username,
-          email : payload.email, imageLInk : payload.imageLInk
+          user_id : Math.random(),
+          fullName: payload.fullName,
+          username: payload.username,
+          email : payload.email,
+          imageLInk : payload.imageLInk
         }
         Cookies.set("UID", newUserData.userId)
         await dispatch("addNewUser", newUserData)
