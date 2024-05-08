@@ -20,7 +20,7 @@ onMounted(() => {
 
 <template>
   <div class="mt-4 row row-cols-xl-5 row-cols-lg-4 row-cols-1 gy-4">
-    <ProductCard v-for="(item, index) in productList" :key="index"  :product-image="item.image" :product-name="item.name" :product-size="item.size" :product-price="item.price"/>
+    <ProductCard v-for="(item, index) in productList" :key="index"  :product-image="item.image" :product-name="item.name" :product-size="item.size" :product-price="item.price" :product-id="item.id"/>
   </div>
 </template>
 
