@@ -24,10 +24,14 @@
           <img src="/img/Avatar.png" alt="">
         </a>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li><a class="dropdown-item" href="#">Order</a></li>
           <li><hr class="dropdown-divider"></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <li><div class="dropdown-item">
+            <button type="button" class="text-danger" data-bs-toggle="modal" data-bs-target="#logoutModal">
+              Logout
+            </button>
+          </div></li>
         </ul>
       </div>
       <svg width="1" height="36" viewBox="0 0 1 36" fill="none" xmlns="http://www.w3.org/2000/svg">
