@@ -1,0 +1,33 @@
+button {
+    background: transparent;
+    border: none;
+}
+button:focus{
+    outline: none;
+}
+.section-margin-top{
+    margin-top: 120px;
+}
+.btn-text{
+    color: rgba(0, 148, 153, 1) !important;
+    transition-duration: 200ms;
+    font-weight: 700;
+}
+.btn-text:hover{
+    filter: brightness(110%);
+}
+.main-color{
+    color: rgba(13, 107, 111, 1)
+}
+desc {
+    color: rgba(64, 64, 64, 1);
+}
+.text-sm {
+    font-size: 14px;
+}
+.text-lg{
+    font-size: 18px;
+}
+p,h1,h2,h3,h4,h5,h6{
+    margin-bottom: 0 !important;
+}
