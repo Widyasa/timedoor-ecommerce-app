@@ -36,9 +36,9 @@ const router = createRouter({
       redirect: '/home',
       name: 'homeLayout',
       component: HomeLayouts,
-      beforeEnter: (to, from, next) => {
-        checkAuth() ? next() : next({name : "Login"})
-      },
+      // beforeEnter: (to, from, next) => {
+      //   checkAuth() ? next() : next({name : "Login"})
+      // },
       children: [
         {
           path: '/home',

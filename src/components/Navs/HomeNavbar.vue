@@ -1,12 +1,16 @@
 <script setup>
-import { onMounted, ref, watch } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 import NonLoginNav from '@/components/Navs/NonLoginNav.vue'
 import IsLoginNav from '@/components/Navs/IsLoginNav.vue'
 import { useRoute } from 'vue-router'
+import { useStore } from 'vuex'
+const store = useStore()
+const isLogin = computed( () => {
+  return store.state.auth.isLogin
+})
+console.log(isLogin.value)
 const route = useRoute()
 const checkRoute = ref(route.name)
-console.log(checkRoute)
-const isLogin = ref(false)
 const isLoginPage = ref(false)
 const menuComponent = ref('NonLoginNav')
 const components = {
@@ -24,13 +28,13 @@ if (isLogin.value === true) {
 // onMounted(() => {
 //   checkRoutes()
 // })
-// watch(isLogin, (newValue, oldValue) => {
-//   if (!newValue) {
-//     menuComponent.value = "NonLoginNav"
-//   } else {
-//     menuComponent.value = "IsLoginNav"
-//   }
-// })
+watch(isLogin, (newValue, oldValue) => {
+  if (!newValue) {
+    menuComponent.value = "NonLoginNav"
+  } else {
+    menuComponent.value = "IsLoginNav"
+  }
+})
 
 </script>
 

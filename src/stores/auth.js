@@ -18,11 +18,12 @@ export const auth =   {
     }
   },
   mutations : {
-    setToken(state, {idToken, expiresIn}) {
+    setToken(state, {idToken, expiresIn, loginStatus}) {
       state.token = idToken
       state.tokenExpiredDate = expiresIn
       Cookies.set("tokenExpirationDate", expiresIn)
       Cookies.set("jwt", idToken)
+      state.isLogin = loginStatus
     },
     setUserLogin(state, {userData, loginStatus}) {
       state.userLogin = userData
@@ -77,7 +78,8 @@ export const auth =   {
         })
         commit("setToken", {
           idToken : data.idToken,
-          expiresIn : new Date().getTime() + Number.parseInt(data.expiresIn) * 1000
+          expiresIn : new Date().getTime() + Number.parseInt(data.expiresIn) * 1000,
+          loginStatus: true
         })
         await dispatch("getUser", data.localId)
       } catch (e) {
