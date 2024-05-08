@@ -5,6 +5,7 @@ import AllProduct from '@/views/Pages/AllProduct.vue'
 import DetailPage from '@/views/Pages/DetailPage.vue'
 import AuthLayout from '@/components/layouts/AuthLayout.vue'
 import LoginPage from '@/views/Pages/Auth/LoginPage.vue'
+import RegisterPage from '@/views/Pages/Auth/RegisterPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -43,7 +44,12 @@ const router = createRouter({
           path:'/auth/login',
           name: 'Login',
           component: LoginPage
-        }
+        },
+        {
+          path:'/auth/register',
+          name: 'Register',
+          component: RegisterPage
+        },
       ]
     }
   ]
