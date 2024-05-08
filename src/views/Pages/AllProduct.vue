@@ -5,14 +5,14 @@ import FooterSection from '@/components/Sections/FooterSection.vue'
 </script>=
 
 <template>
-  <main class="container allproduct-wrapper">
+  <main class="container all-product-wrapper">
     <HomeProduct />
   </main>
   <FooterSection />
 </template>
 
 <style scoped>
-.allproduct-wrapper{
+.all-product-wrapper{
   height: 91vh;
 }
 </style>
